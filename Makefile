@@ -1,41 +1,41 @@
-NAME = pushswap.a
-SRCS = 	push_swap.c convert_n.c init_stack.c
+NAME = push_swap
+SRCS = push_swap.c init_stack.c error_404.c
+HEADER = push_swap.h
 
-
-GCC = gcc -Wall -Werror -Wextra
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
 OBJS = $(SRCS:.c=.o)
 
-BNOBJ = $(BONUS:.c=.o)
+$BNOBJ = $(BONUS:.c=.o)
 
-LIB = ar -crs
+LIB = libft/
 
 DEL = rm -rf
+
+all: $(NAME)
+	
+$(NAME): $(OBJS) 
+	make -C $(LIB)
+	$(CC) $(CFLAGS) $(SRCS) -L $(LIB) -lft -o $(NAME)
+
+#bonus: $(OBJS) $(BNOBJ) 
+#	$(GCC) $(NAME) $(OBJS) $(BNOBJ)
+
+clean:
+	@make clean -C $(LIB)
+	$(DEL) $(OBJS)
+
+fclean: clean
+	$(DEL) $(NAME)
+
+re: fclean all
 
 norm:
 	@cat duck.txt
 	@say -v Kanya "ขอตรวจ"
 	@say -v Kyoko "norminetto"
 	@say -v Kanya "หน่อยนะ"
-	@norminette $(SRCS)
-
-%o: %c 
-	$(GCC) -c $< -o $@ 
-
-all: $(NAME)
-	
-$(NAME): $(OBJS)
-	$(LIB) $(NAME) $(OBJS)
-
-bonus: $(OBJS) $(BNOBJ) 
-	$(LIB) $(NAME) $(OBJS) $(BNOBJ)
-
-clean:
-	$(DEL) $(OBJS) $(BNOBJ)
-
-fclean: clean
-	$(DEL) $(NAME) 
-
-re: fclean all
+	@norminette $(SRCS) $(HEADER)
 
 .PHONY: norm bonus clean fclean all re

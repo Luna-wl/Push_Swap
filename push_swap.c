@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:55 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/25 16:35:23 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/12/26 15:37:38 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ int	main(int ac, char **av)
 	{
 		while (i < ac)
 		{
-			put_in_stack(av[i], a_stack);
+			put_in_stack(av[i], &a_stack);
 			i++;
 		}
 	}

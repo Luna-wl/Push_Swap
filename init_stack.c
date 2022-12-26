@@ -6,20 +6,23 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/25 16:38:58 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:47:05 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-size_t	find_len(int *n)
+void	free_split(char **str)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (n[i] != 0)
+	while (str[i])
+	{
+		free(str[i]);
 		i++;
-	return (i);
+	}
+	free(str);
 }
 
 void	add_back(t_stack **a_stack, int n)
@@ -53,28 +56,41 @@ void	add_first(t_stack **a_stack, int n)
 		add_back(a_stack, n);
 }
 
-void	put_in_stack(char *av, t_stack *a_stack)
+size_t	find_size(char **n)
 {
-	int	*n;
-	int	i;
-	int	len;
+	size_t	i;
 
-	n = convert_at(av);
-	len = find_len(n);
+	i = 0;
+	while (n[i] != 0)
+		i++;
+	return (i);
+}
+
+void	put_in_stack(char *av, t_stack **a_stack)
+{
+	char	**agv;
+	int		i;
+	int		len;
+
+	agv = ft_split(av, ' ');
+	len = find_size(agv);
 	i = 0;
 	while (i < len)
 	{
-		add_first(&a_stack, n[i]);
+		add_first(a_stack, ft_atoi(agv[i]));
 		i++;
 	}
-	my_print(a_stack);
-	free(n);
+	free_split(agv);
+	my_print(*a_stack);
 }
 
-void my_print(t_stack *node)
+void	my_print(t_stack *node)
 {
-	t_stack	*tmp = node;
-	int i = 0;
+	t_stack	*tmp;
+	int		i;
+
+	i = 0;
+	tmp = node;
 	while (tmp != NULL)
 	{
 		printf("tmp->num[%d] = %d\n", i, tmp->num);

@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/24 23:03:06 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/12/26 16:01:36 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,18 +19,23 @@
 # include "libft/libft.h"
 # include "ft_printf/ft_printf.h"
 
-typedef struct stack {
-	int		num;
-	struct	stack	*next;
+typedef struct s_stack {
+	int					num;
+	struct s_stack		*next;
 }	t_stack;
 
 //creat link list
-void	put_in_stack(char *av, t_stack *a_stack);
-void	my_print(t_stack *node);
+void	put_in_stack(char *av, t_stack **a_stack);
+void	my_print(t_stack *node); // del after finish
+void	add_back(t_stack **a_stack, int n);
+void	add_first(t_stack **a_stack, int n);
 
-//convert into number
+//free split
+void	free_split(char **str);
+
+//find 2star length
 size_t	find_size(char **n);
-int		*convert_at(char *s);
 
+int		digit_mai(char **s);
 
 #endif
