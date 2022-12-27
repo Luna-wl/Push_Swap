@@ -6,24 +6,11 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/26 16:47:05 by wluedara         ###   ########.fr       */
+/*   Updated: 2022/12/27 22:46:50 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-void	free_split(char **str)
-{
-	int	i;
-
-	i = 0;
-	while (str[i])
-	{
-		free(str[i]);
-		i++;
-	}
-	free(str);
-}
 
 void	add_back(t_stack **a_stack, int n)
 {
@@ -41,7 +28,7 @@ void	add_back(t_stack **a_stack, int n)
 	last->next = tmp;
 }
 
-void	add_first(t_stack **a_stack, int n)
+void	add_list(t_stack **a_stack, int n)
 {
 	t_stack	*head;
 
@@ -77,11 +64,13 @@ void	put_in_stack(char *av, t_stack **a_stack)
 	i = 0;
 	while (i < len)
 	{
-		add_first(a_stack, ft_atoi(agv[i]));
+		if (digit_mai(agv[i]) >= 0)
+			error404(&agv[i]);
+		else
+			add_list(a_stack, ft_atoi(agv[i]));
 		i++;
 	}
-	free_split(agv);
-	my_print(*a_stack);
+	ploi_split(agv);
 }
 
 void	my_print(t_stack *node)
