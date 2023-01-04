@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/27 23:39:28 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/04 15:31:45 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ void	rotate(t_stack **stack)
 	hang = *stack;
 	hua = hang->num;
 	lop_stack(stack, hua);
-	add_back(stack, hua);
+	add_back(stack, hang);
 }
 
 void	rorotate(t_stack **ant, t_stack **bee)
@@ -48,7 +48,7 @@ void	rerotate(t_stack **stack)
 	add_hua(stack, hang);
 }
 
-void	rerotate_AB(t_stack **ant, t_stack **bee)
+void	rerotate_ab(t_stack **ant, t_stack **bee)
 {
 	rerotate(ant);
 	rerotate(bee);
