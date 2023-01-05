@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:55 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 15:35:29 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:03:46 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,10 @@ int	main(int ac, char **av)
 			put_in_stack(av[i], &a_stack);
 			i++;
 		}
+		if (dup_mai(&a_stack) == 0)
+			error406(&a_stack, 0);
+		if (truat_stack(&a_stack) == 1)
+			error406(&a_stack, 1);
 		my_print(a_stack);
-		truat_stack(a_stack);
 	}
 }

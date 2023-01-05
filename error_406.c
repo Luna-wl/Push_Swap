@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:50:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 15:15:16 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:56:05 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,9 +55,17 @@ void	ploi_stack(t_stack **stack)
 	*stack = NULL;
 }
 
-void	error406(t_stack **stack)
+void	error406(t_stack **stack, int mode)
 {
-	write(2, "Error\n", 6);
-	ploi_stack(stack);
-	exit (0);
+	if (mode == 0)
+	{
+		write(2, "Error\n", 6);
+		ploi_stack(stack);
+		exit (0);
+	}
+	if (mode == 1)
+	{
+		ploi_stack(stack);
+		exit (0);
+	}
 }

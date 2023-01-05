@@ -1,7 +1,6 @@
-NAME = push_swap
-SRCS = push_swap.c init_stack.c error_406.c sarab.c push_stack.c rotate.c \
-		new_atoi.c check_stack.c
-HEADER = push_swap.h
+NAME = 	push_swap
+SRCS = 	push_swap.c init_stack.c error_406.c sarab.c push_stack.c rotate.c \
+		new_atoi.c check_stack.c ft_split.c stack_utils.c
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
@@ -10,21 +9,17 @@ OBJS = $(SRCS:.c=.o)
 
 # $BNOBJ = $(BONUS:.c=.o)
 
-LIB = libft/
-
 DEL = rm -rf
 
 all: $(NAME)
 	
 $(NAME): $(OBJS) 
-	@make -C $(LIB)
-	$(CC) $(CFLAGS) $(SRCS) -L $(LIB) -lft -o $(NAME)
+	$(CC) $(CFLAGS) $(SRCS) -o $(NAME)
 
 #bonus: $(OBJS) $(BNOBJ) 
 #	$(GCC) $(NAME) $(OBJS) $(BNOBJ)
 
 clean:
-	@make clean -C $(LIB)
 	$(DEL) $(OBJS)
 
 fclean: clean

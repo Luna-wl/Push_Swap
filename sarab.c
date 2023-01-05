@@ -12,28 +12,33 @@
 
 #include "push_swap.h"
 
-void	sarab_swap(t_stack *stack)
+void	sarab_swap(t_stack **stack)
 {
 	int	tmp;
 
-	if (stack->next == NULL)
+	if ((*stack)->next == NULL)
 		return ;
-	tmp = stack->num;
-	stack->num = stack->next->num;
-	stack->next->num = tmp;
+	tmp = (*stack)->num;
+	(*stack)->num = (*stack)->next->num;
+	(*stack)->next->num = tmp;
 }
 
-void	sarab_a_and_b(t_stack *a, t_stack *b)
+void	sarab_stack(t_stack **a, t_stack **b, char mode)
 {
-	int	tmp;
-	int	tmp2;
-
-	if (a->next == NULL || b->next == NULL)
-		return ;
-	tmp = a->num;
-	a->num = a->next->num;
-	a->next->num = tmp;
-	tmp2 = b->num;
-	b->num = b->next->num;
-	b->next->num = tmp2;
+	if (mode == 'a')
+	{
+		sarab_swap(a);
+		write(1, "sa\n", 3);
+	}
+	else if (mode == 'b')
+	{
+		sarab_swap(b);
+		write(1, "sb\n", 3);
+	}
+	else
+	{
+		sarab_swap(a);
+		sarab_swap(b);
+		write(1, "ss\n", 3);
+	}
 }

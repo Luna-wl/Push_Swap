@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:04:23 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 15:33:50 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/04 16:24:47 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ int	is_space(char str)
 {
 	if (str == ' ' || str == '\f' || str == '\n' || str == '\r'
 		|| str == '\t' || str == '\v' || str == '\t')
-		return(1);
+		return (1);
 	return (0);
 }
 

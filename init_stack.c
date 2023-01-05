@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 15:34:29 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/05 14:34:18 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,33 +22,16 @@ size_t	find_size(char **n)
 	return (i);
 }
 
-void	add_back(t_stack **stack, t_stack *hang)
-{
-	t_stack	*last;
-
-	if (*stack == NULL)
-	{
-		*stack = hang;
-		return ;
-	}
-	last = *stack;
-	while (last->next != NULL)
-	{
-		last = last->next;
-	}
-	last->next = hang;
-}
-
 void	add_list(t_stack **a_stack, char *n, char **split)
 {
 	t_stack	*hua;
 
 	hua = malloc(sizeof(t_stack));
 	if (!hua)
-		error406(a_stack);
+		error406(a_stack, 0);
 	hua->num = my_atoi(n, a_stack, split, hua);
 	hua->next = NULL;
-	add_back(a_stack, hua);
+	add_hang(a_stack, hua);
 }
 
 void	put_in_stack(char *av, t_stack **a_stack)
@@ -79,7 +62,7 @@ void	my_print(t_stack *node)
 	t_stack	*tmp;
 	int		i;
 
-	i = 0;
+	i = 1;
 	tmp = node;
 	while (tmp != NULL)
 	{

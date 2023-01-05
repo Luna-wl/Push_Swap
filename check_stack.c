@@ -6,30 +6,49 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:07:34 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 15:34:15 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/05 15:03:44 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
+//sort mai
+int	truat_stack(t_stack **stack)
+{
+	t_stack	*before;
+	t_stack	*after;
+
+	if (*stack == NULL || (*stack)->next == NULL)
+		return (0);
+	before = *stack;
+	after = (*stack)->next;
+	while (after != NULL)
+	{
+		if (after->num < before->num)
+			return (0);
+		before = after;
+		after = after->next;
+	}
+	return (1);
+}
+
 //check dup
-void	truat_stack(t_stack *stack)
+int	dup_mai(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*new;
 
-	while (stack->next != NULL)
+	new = *stack;
+	while (new->next != NULL)
 	{
-		tmp = stack->next;
+		tmp = new->next;
 		while (tmp != NULL)
 		{
-			if (stack->num == tmp->num)
-			{
-				write(2, "Error\n", 6);
-				ploi_stack(&stack);
-				exit (0);
-			}
+			if (new->num == tmp->num)
+				return (0);
 			tmp = tmp->next;
 		}
-		stack = stack->next;
+		new = new->next;
 	}
+	return (1);
 }
