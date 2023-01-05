@@ -5,14 +5,24 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/08/31 16:27:33 by wluedara          #+#    #+#             */
-/*   Updated: 2022/12/23 11:36:27 by wluedara         ###   ########.fr       */
+/*   Created: 2023/01/04 23:59:02 by wluedara          #+#    #+#             */
+/*   Updated: 2023/01/05 14:35:14 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "push_swap.h"
 
-static int	check_word(char const *s, char c)
+int	ft_strlen(const char *str)
+{
+	int	i;
+
+	i = 0;
+	while (str[i] != '\0')
+		i++;
+	return (i);
+}
+
+int	check_word(char const *s, char c)
 {
 	int	i;
 	int	count;
@@ -35,7 +45,7 @@ static int	check_word(char const *s, char c)
 	return (count);
 }
 
-static int	count_letter(char const *s, char c)
+int	count_letter(char const *s, char c)
 {
 	char	*s1;
 	int		i;
@@ -50,7 +60,7 @@ static int	count_letter(char const *s, char c)
 	return (i);
 }
 
-static char	*split(char const *s, char c)
+char	*my_split(char const *s, char c)
 {
 	char	*str;
 	int		letter;
@@ -88,21 +98,9 @@ char	**ft_split(char const *s, char c)
 	{
 		while (s[j] == c && s[j] != '\0')
 			j++;
-		new[i++] = split(&s[j], c);
+		new[i++] = my_split(&s[j], c);
 		j += count_letter(&s[j], c);
 	}
 	new[i] = 0;
 	return (new);
 }
-
-// int main()
-// {
-// 	char **tab = ft_split("  fah warin  ", ' ');
-// 	int i = 0;
-
-// 	while (i < 5)
-// 	{
-// 		printf("line %i = %s\n", i, tab[i]);
-// 		i++;
-// 	}
-// }
