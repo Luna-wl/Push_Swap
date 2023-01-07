@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   init_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 17:26:07 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/07 12:44:41 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,18 +55,4 @@ void	put_in_stack(char *av, t_stack **a_stack)
 		i++;
 	}
 	lop_split(agv);
-}
-
-void	my_print(t_stack *node)
-{
-	t_stack	*tmp;
-
-	tmp = node;
-	while (tmp != NULL)
-	{
-		printf("|tmp->num = %d\n", tmp->num);
-		printf("tmp->index = %d|\n", tmp->index);
-		tmp = tmp->next;
-	}
-	printf("\n");
 }

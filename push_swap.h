@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 17:41:49 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/07 18:01:38 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,14 @@ void	rerotate_ab(t_stack **ant, t_stack **bee, char mode);
 //sort
 void	sort_sage(t_stack **a, t_stack **b);
 void	sort_sam(t_stack **a, t_stack **b);
-t_stack	*find_last(t_stack **stack);
 void	sort_ha(t_stack **a, t_stack **b);
+//list2arr && quick sort
+int		*list_to_arr(t_stack **stack, int len);
+void	swap(int *a, int *b);
+void	quick_sort_sage(int *arr, int max, int min);
+int		find_pi_position(int *arr, int max, int min);
+void	init_index2list(t_stack **stack);
+
+void	print_arr(int *arr);
 
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 15:58:34 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/07 16:25:16 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,10 @@ void	rotate(t_stack **stack)
 	t_stack	*first;
 	t_stack	*last;
 
-	first = *stack;
-	last = *stack;
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
+	first = *stack;
+	last = *stack;
 	while (last->next != NULL)
 	{
 		last = last->next;
@@ -31,7 +31,6 @@ void	rotate(t_stack **stack)
 	first->next = NULL; // 3 1 2 -> 3
 	/* Set the next of last as first */
 	last->next = first; // 2 -> 2 3
-	
 }
 
 void	rorotate(t_stack **ant, t_stack **bee, char mode)
@@ -72,7 +71,6 @@ void	rerotate(t_stack **stack)
 	tmp->next = *stack;
 	*stack = tmp;
 }
-// 2 3 1
 //stack 2 3 1 -> 2 3 -> 1 2 3
 //hang =  	->	3 1 -> 3
 //tmp = 2 3 1 -> 1   -> 1 2 3

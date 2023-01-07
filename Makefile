@@ -1,6 +1,7 @@
 NAME = 	push_swap
 SRCS = 	push_swap.c init_stack.c error_406.c sarab.c push_stack.c rotate.c \
-		new_atoi.c check_stack.c ft_split.c stack_utils.c sort_stack.c
+		new_atoi.c check_stack.c ft_split.c stack_utils.c sort_stack.c quick_sort.c \
+		sort_stack_too.c
 
 CC = gcc
 CFLAGS = -Wall -Werror -Wextra
