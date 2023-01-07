@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:07:34 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 15:03:44 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:36:34 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int	truat_stack(t_stack **stack)
 	t_stack	*after;
 
 	if (*stack == NULL || (*stack)->next == NULL)
-		return (0);
+		return (1);
 	before = *stack;
 	after = (*stack)->next;
 	while (after != NULL)

@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:50:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 14:56:05 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:30:47 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ int	digit_mai(char *s)
 	return (i);
 }
 
-void	ploi_split(char **str)
+void	lop_split(char **str)
 {
 	int	i;
 
@@ -42,7 +42,7 @@ void	ploi_split(char **str)
 	free(str);
 }
 
-void	ploi_stack(t_stack **stack)
+void	lop_stack(t_stack **stack)
 {
 	t_stack	*tmp;
 
@@ -60,12 +60,12 @@ void	error406(t_stack **stack, int mode)
 	if (mode == 0)
 	{
 		write(2, "Error\n", 6);
-		ploi_stack(stack);
+		lop_stack(stack);
 		exit (0);
 	}
 	if (mode == 1)
 	{
-		ploi_stack(stack);
+		lop_stack(stack);
 		exit (0);
 	}
 }

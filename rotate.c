@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 14:35:02 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 15:58:34 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,24 @@
 
 void	rotate(t_stack **stack)
 {
-	t_stack	*hang;
-	int		hua;
+	t_stack	*first;
+	t_stack	*last;
 
+	first = *stack;
+	last = *stack;
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	hang = *stack;
-	hua = hang->num;
-	lop_stack(stack, hua);
-	add_hang(stack, hang);
+	while (last->next != NULL)
+	{
+		last = last->next;
+	}
+	/* Change the head pointer to point to second node now */
+	*stack = first->next; // 3 1 2 -> 1 2
+	/* Set the next of first as NULL */
+	first->next = NULL; // 3 1 2 -> 3
+	/* Set the next of last as first */
+	last->next = first; // 2 -> 2 3
+	
 }
 
 void	rorotate(t_stack **ant, t_stack **bee, char mode)
@@ -47,21 +56,26 @@ void	rorotate(t_stack **ant, t_stack **bee, char mode)
 
 void	rerotate(t_stack **stack)
 {
-	t_stack	*hua;
-	int		hang;
+	t_stack	*hang;
+	t_stack	*tmp;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
-	hua = *stack;
-	while (hua->next != NULL)
+	hang = NULL;
+	tmp = *stack;
+	while (tmp->next != NULL)
 	{
-		hua = hua->next;
+		hang = tmp;
+		tmp = hang->next;
 	}
-	hang = hua->num;
-	lop_stack(stack, hang);
-	add_hua(stack, hua);
+	hang->next = NULL;
+	tmp->next = *stack;
+	*stack = tmp;
 }
-
+// 2 3 1
+//stack 2 3 1 -> 2 3 -> 1 2 3
+//hang =  	->	3 1 -> 3
+//tmp = 2 3 1 -> 1   -> 1 2 3
 void	rerotate_ab(t_stack **ant, t_stack **bee, char mode)
 {
 	if (mode == 'a')

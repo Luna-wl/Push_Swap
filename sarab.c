@@ -14,13 +14,14 @@
 
 void	sarab_swap(t_stack **stack)
 {
-	int	tmp;
+	t_stack	*hua;
 
 	if ((*stack)->next == NULL)
 		return ;
-	tmp = (*stack)->num;
-	(*stack)->num = (*stack)->next->num;
-	(*stack)->next->num = tmp;
+	hua = *stack;
+	*stack = hua->next;
+	hua->next = hua->next->next;
+	(*stack)->next = hua;
 }
 
 void	sarab_stack(t_stack **a, t_stack **b, char mode)

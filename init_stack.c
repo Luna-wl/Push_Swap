@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 14:34:18 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 17:26:07 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,27 +48,25 @@ void	put_in_stack(char *av, t_stack **a_stack)
 		if (digit_mai(agv[i]) == -1)
 		{
 			write(2, "Error\n", 6);
-			ploi_split(agv);
+			lop_split(agv);
 			exit (0);
 		}
 		add_list(a_stack, agv[i], agv);
 		i++;
 	}
-	ploi_split(agv);
+	lop_split(agv);
 }
 
 void	my_print(t_stack *node)
 {
 	t_stack	*tmp;
-	int		i;
 
-	i = 1;
 	tmp = node;
 	while (tmp != NULL)
 	{
-		printf("tmp->num[%d] = %d\n", i, tmp->num);
+		printf("|tmp->num = %d\n", tmp->num);
+		printf("tmp->index = %d|\n", tmp->index);
 		tmp = tmp->next;
-		i++;
 	}
 	printf("\n");
 }

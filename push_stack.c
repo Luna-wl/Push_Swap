@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:45:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 15:07:53 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:29:26 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,23 +15,28 @@
 void	push_stack1to2(t_stack **ichi, t_stack **ni)
 {
 	t_stack	*tmp;
+	t_stack	*hua;
 
-	if (*ichi == NULL || *ni == NULL)
-		return ;
 	tmp = *ichi;
-	add_hua(ni, tmp);
-	lop_stack(ichi, tmp->num);
+	hua = *ichi;
+	*ichi = tmp->next;
+	hua->next = NULL;
+	add_hua(ni, hua);
 }
 
-void	push_urhandup(t_stack **ichi, t_stack **ni, char mode)
+void	push_stack(t_stack **ichi, t_stack **ni, char mode)
 {
 	if (mode == 'a')
 	{
+		if (*ni == NULL)
+			return ;
 		push_stack1to2(ni, ichi);
 		write(1, "pa\n", 3);
 	}
 	else
 	{
+		if (*ichi == NULL)
+			return ;
 		push_stack1to2(ichi, ni);
 		write(1, "pb\n", 3);
 	}

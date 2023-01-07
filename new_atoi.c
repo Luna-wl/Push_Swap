@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:04:23 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/04 16:24:47 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/06 16:34:48 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,15 +42,15 @@ long	my_atoi(char *str, t_stack **a, char **split, t_stack *list)
 	}
 	num *= minus;
 	if (*str != '\0' || num > 2147483647 || num < -2147483648)
-		ploi_all(a, split, list);
+		lop_all(a, split, list);
 	return (num);
 }
 
-void	ploi_all(t_stack **a, char **split, t_stack *list)
+void	lop_all(t_stack **a, char **split, t_stack *list)
 {
 	write(2, "Error\n", 6);
-	ploi_split(split);
-	ploi_stack(a);
+	lop_split(split);
+	lop_stack(a);
 	free(list);
 	exit (0);
 }
