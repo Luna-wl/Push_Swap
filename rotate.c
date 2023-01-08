@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 16:25:16 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:19:45 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,7 @@ void	rotate(t_stack **stack)
 	if (*stack == NULL || (*stack)->next == NULL)
 		return ;
 	first = *stack;
-	last = *stack;
-	while (last->next != NULL)
-	{
-		last = last->next;
-	}
+	last = find_last(stack);
 	/* Change the head pointer to point to second node now */
 	*stack = first->next; // 3 1 2 -> 1 2
 	/* Set the next of first as NULL */

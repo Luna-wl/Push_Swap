@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:55 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 17:06:33 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:17:47 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,7 @@ int	main(int ac, char **av)
 		my_print(a_stack);
 		// printf("b = \n");
 		// my_print(b_stack);
+		lop_stack(&a_stack);
 	}
 	return (0);
 }

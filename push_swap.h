@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 18:01:38 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:13:35 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void	lop_all(t_stack **a, char **split, t_stack *list);
 void	add_hang(t_stack **stack, t_stack *hang);
 void	add_hua(t_stack **stack, t_stack *hua);
 int		stack_lenght(t_stack **stack);
-void	init_index(t_stack **stack);
+t_stack	*find_last(t_stack **stack);
 //creat link list
 void	add_list(t_stack **a_stack, char *n, char **split);
 void	put_in_stack(char *av, t_stack **a_stack);
@@ -65,6 +65,7 @@ void	rerotate_ab(t_stack **ant, t_stack **bee, char mode);
 //sort
 void	sort_sage(t_stack **a, t_stack **b);
 void	sort_sam(t_stack **a, t_stack **b);
+int		find_max(t_stack **a);
 void	sort_ha(t_stack **a, t_stack **b);
 //list2arr && quick sort
 int		*list_to_arr(t_stack **stack, int len);

@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/22 23:13:19 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 12:44:41 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:14:58 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void	add_list(t_stack **a_stack, char *n, char **split)
 {
 	t_stack	*hua;
 
-	hua = malloc(sizeof(t_stack));
+	hua = (t_stack *)malloc(sizeof(t_stack));
 	if (!hua)
 		error406(a_stack, 0);
 	hua->num = my_atoi(n, a_stack, split, hua);

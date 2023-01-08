@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 18:01:50 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:09:12 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,10 @@
 
 void	sort_ha(t_stack **a, t_stack **b)
 {
-	
+	push_stack(a, b, 'b');
+	push_stack(a, b, 'b');
+	if (!truat_stack(a))
+		sort_sam(a, b);
 }
 
 void	sort_sage(t_stack **a, t_stack **b)
@@ -31,4 +34,6 @@ void	sort_sage(t_stack **a, t_stack **b)
 		sort_sam(a, NULL);
 	else if (len == 5)
 		sort_ha(a, b);
+	// if (truat_stack(a))
+	// 	return ;
 }

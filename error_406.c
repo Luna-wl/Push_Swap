@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   error_406.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:50:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 16:30:47 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 16:44:48 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,14 +45,15 @@ void	lop_split(char **str)
 void	lop_stack(t_stack **stack)
 {
 	t_stack	*tmp;
+	t_stack	*del;
 
-	while (*stack != NULL)
+	del = *stack;
+	while (del != NULL)
 	{
-		tmp = (*stack)->next;
-		free (tmp);
-		*stack = tmp;
+		tmp = del->next;
+		free(del);
+		del = tmp;
 	}
-	*stack = NULL;
 }
 
 void	error406(t_stack **stack, int mode)

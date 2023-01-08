@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:10:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 17:05:39 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:45:35 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,11 +36,7 @@ void	add_hang(t_stack **stack, t_stack *hang)
 		*stack = hang;
 		return ;
 	}
-	last = *stack;
-	while (last->next != NULL)
-	{
-		last = last->next;
-	}
+	last = find_last(stack);
 	last->next = hang;
 }
 
@@ -72,13 +68,24 @@ void	my_print(t_stack *node)
 	printf("\n");
 }
 
-void	print_arr(int *arr)
+t_stack	*find_last(t_stack **stack)
 {
-	int i = 0;
+	t_stack	*last;
 
-	while (arr[i])
+	last = *stack;
+	while (last->next != NULL)
 	{
-		printf("arr[%d] = %d\n", i, arr[i]);
-		i++;
+		last = last->next;
 	}
+	return (last);
 }
+// void	print_arr(int *arr)
+// {
+// 	int i = 0;
+
+// 	while (arr[i])
+// 	{
+// 		printf("arr[%d] = %d\n", i, arr[i]);
+// 		i++;
+// 	}
+// }

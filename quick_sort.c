@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:49:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 17:06:08 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/08 15:40:06 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void	init_index2list(t_stack **stack)
 	arr = list_to_arr(stack, len);
 	quick_sort_sage(arr, len - 1, 0);
 	new = *stack;
-	// print_arr(arr);
 	while (new != NULL)
 	{
 		i = 0;
@@ -97,4 +96,5 @@ void	init_index2list(t_stack **stack)
 		}
 		new = new->next;
 	}
+	free(arr);
 }
