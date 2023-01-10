@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/08 16:13:35 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/09 16:30:22 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,18 +62,16 @@ void	rorotate(t_stack **ant, t_stack **bee, char mode);
 //rerotate
 void	rerotate(t_stack **stack);
 void	rerotate_ab(t_stack **ant, t_stack **bee, char mode);
-//sort
-void	sort_sage(t_stack **a, t_stack **b);
-void	sort_sam(t_stack **a, t_stack **b);
-int		find_max(t_stack **a);
-void	sort_ha(t_stack **a, t_stack **b);
 //list2arr && quick sort
 int		*list_to_arr(t_stack **stack, int len);
 void	swap(int *a, int *b);
 void	quick_sort_sage(int *arr, int max, int min);
 int		find_pi_position(int *arr, int max, int min);
 void	init_index2list(t_stack **stack);
-
-void	print_arr(int *arr);
+//sort
+void	sort_sage(t_stack **a, t_stack **b);
+void	sort_sam(t_stack **a);
+int		find_max(t_stack **a);
+void	sort_ha(t_stack **a, t_stack **b);
 
 #endif

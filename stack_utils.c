@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:10:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/08 15:45:35 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:35:05 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -79,13 +79,3 @@ t_stack	*find_last(t_stack **stack)
 	}
 	return (last);
 }
-// void	print_arr(int *arr)
-// {
-// 	int i = 0;
-
-// 	while (arr[i])
-// 	{
-// 		printf("arr[%d] = %d\n", i, arr[i]);
-// 		i++;
-// 	}
-// }

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   quick_sort.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/07 12:49:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/08 15:40:06 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:37:04 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,7 @@ int	find_pi_position(int *arr, int max, int min)
 	int	pivot;
 	int	i;
 	int	k;
-	
+
 	pivot = arr[max];
 	i = min - 1;
 	k = min;

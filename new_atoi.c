@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 16:04:23 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 16:34:48 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/09 17:18:41 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,8 @@ long	my_atoi(char *str, t_stack **a, char **split, t_stack *list)
 		if (*str == '-')
 			minus *= -1;
 		str++;
+		if (!(*str >= '0' && *str <= '9'))
+			lop_all(a, split, list);
 	}
 	while (*str >= '0' && *str <= '9')
 	{

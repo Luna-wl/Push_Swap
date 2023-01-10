@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   check_stack.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/03 17:07:34 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/07 18:01:08 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/10 17:21:38 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,8 +18,6 @@ int	truat_stack(t_stack **stack)
 	t_stack	*before;
 	t_stack	*after;
 
-	if (*stack == NULL || (*stack)->next == NULL)
-		return (1);
 	before = *stack;
 	after = (*stack)->next;
 	while (after != NULL)
@@ -38,6 +36,8 @@ int	dup_mai(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*new;
 
+	if (*stack == NULL || (*stack)->next == NULL)
+		error406(stack, 1);
 	new = *stack;
 	while (new->next != NULL)
 	{

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   rotate.c                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/08 15:19:45 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/09 15:35:45 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,12 +21,9 @@ void	rotate(t_stack **stack)
 		return ;
 	first = *stack;
 	last = find_last(stack);
-	/* Change the head pointer to point to second node now */
-	*stack = first->next; // 3 1 2 -> 1 2
-	/* Set the next of first as NULL */
-	first->next = NULL; // 3 1 2 -> 3
-	/* Set the next of last as first */
-	last->next = first; // 2 -> 2 3
+	*stack = first->next;
+	first->next = NULL;
+	last->next = first;
 }
 
 void	rorotate(t_stack **ant, t_stack **bee, char mode)
@@ -67,9 +64,7 @@ void	rerotate(t_stack **stack)
 	tmp->next = *stack;
 	*stack = tmp;
 }
-//stack 2 3 1 -> 2 3 -> 1 2 3
-//hang =  	->	3 1 -> 3
-//tmp = 2 3 1 -> 1   -> 1 2 3
+
 void	rerotate_ab(t_stack **ant, t_stack **bee, char mode)
 {
 	if (mode == 'a')
