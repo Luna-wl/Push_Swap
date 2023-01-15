@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/09 16:30:22 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/15 23:16:39 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,5 +73,6 @@ void	sort_sage(t_stack **a, t_stack **b);
 void	sort_sam(t_stack **a);
 int		find_max(t_stack **a);
 void	sort_ha(t_stack **a, t_stack **b);
+void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck_ori, int len);
 
 #endif

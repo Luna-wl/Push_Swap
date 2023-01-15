@@ -6,62 +6,46 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/10 17:29:31 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/15 23:31:11 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	find_max(t_stack **a)
+// void	sort_yai_too(t_stack **a, t_stack **b)
+// {
+
+// }
+
+void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck_ori, int len)
 {
-	t_stack	*tmp;
-	int		max;
-
-	tmp = *a;
-	max = tmp->index;
-	while (tmp->next != NULL)
+	//push to b till a lenght == 3 & loop %chuck times
+	while (len-- >= 0)
 	{
-		if (max < tmp->next->index)
-			max = tmp->next->index;
-		tmp = tmp->next;
-	}
-	return (max);
-}
-
-void	sort_sam(t_stack **a)
-{
-	int	max;
-
-	if (truat_stack(a))
-		return ;
-	max = find_max(a);
-	if ((*a)->index == max)
-	{
-		if ((*a)->next->next->index > (*a)->next->index)
-			rorotate(a, NULL, 'a');
+		if ((*a)->index <= chuck)
+			push_stack(a, b, 'b');
 		else
-			sarab_stack(a, NULL, 'a');
+			rorotate(a, b, 'a');
+		if (stack_lenght(a) == 3)
+			return ;
 	}
-	if ((*a)->next->index == max)
-	{
-		if ((*a)->index < (*a)->next->next->index)
-			sarab_stack(a, NULL, 'a');
-		else
-			rerotate_ab(a, NULL, 'a');
-	}
-	if ((*a)->next->next->index == max && (*a)->index > (*a)->next->index)
-		sarab_stack(a, NULL, 'a');
-	sort_sam(a);
+	chuck += chuck_ori;
+	len = stack_lenght(a);
+	sort_yai(a, b, chuck, chuck_ori, len);
 }
 
 void	sort_sage(t_stack **a, t_stack **b)
 {
 	int	len;
+	int	chuck;
+	// int	i;
 
 	len = stack_lenght(a);
 	init_index2list(a);
-	printf("=== Before ===\n");
-	my_print(*a);
+	// printf("=== Before ===\n a = \n");
+	// my_print(*a);
+	// printf("b = \a");
+	// my_print(*b);
 	if (len == 2)
 		sarab_stack(a, b, 'a');
 	else if (len == 3)
@@ -70,10 +54,10 @@ void	sort_sage(t_stack **a, t_stack **b)
 		sort_ha(a, b);
 	else
 	{
-		if (len <= 100)
-		{
-			
-		}
-		// if (len >= 500)
+		if (len >= 500)
+			chuck = len / 10;
+		else
+			chuck = len / 4;
+		sort_yai(a, b, chuck, chuck, len);
 	}
 }

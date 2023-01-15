@@ -6,7 +6,7 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:55 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/10 17:28:28 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/15 23:25:18 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,8 @@ int	main(int ac, char **av)
 		printf("=== After ===\n");
 		printf("a = \n");
 		my_print(a_stack);
+		printf("b = \n");
+		my_print(b_stack);
 		lop_stack(&a_stack);
 	}
 	return (0);
