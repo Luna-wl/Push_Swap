@@ -6,9 +6,10 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/17 17:39:28 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/17 17:54:40 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 
 #include "push_swap.h"
 
@@ -55,7 +56,7 @@ void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck2)
 		rorotate(a, b, 'a');
 	if (i == chuck)
 	{
-		chuck += chuck2;
+		chuck += chuck;
 	}
 	sort_yai(a, b, chuck, chuck2);
 }
@@ -85,8 +86,10 @@ void	sort_sage(t_stack **a, t_stack **b)
 			chuck = len / 4;
 		// printf("chuck = %d\n", chuck);
 		sort_yai(a, b, chuck, chuck);
-		if (truat_stack(a))
+		if (!truat_stack(a))
 			sort_sam(a);
 		back_home(a, b);
+		sort_yai(a, b, chuck, chuck);
+		// sort_yai_too(a, b, len);
 	}
 }
