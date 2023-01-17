@@ -6,32 +6,78 @@
 /*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/15 23:31:11 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/17 01:48:13 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-// void	sort_yai_too(t_stack **a, t_stack **b)
-// {
-
-// }
-
-void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck_ori, int len)
+int	ha_median(int num)
 {
-	//push to b till a lenght == 3 & loop %chuck times
-	while (len-- >= 0)
+	int		median;
+	int		index;
+
+	median = 0;
+	index = 0;
+	if (num % 2 == 0)
 	{
-		if ((*a)->index <= chuck)
-			push_stack(a, b, 'b');
-		else
-			rorotate(a, b, 'a');
-		if (stack_lenght(a) == 3)
-			return ;
+		index = (((num - 1) / 2) + (num / 2)) / 2;
+		median = index;
 	}
-	chuck += chuck_ori;
-	len = stack_lenght(a);
-	sort_yai(a, b, chuck, chuck_ori, len);
+	else
+	{
+		index = num / 2;
+		median = index;
+	}
+	return (median);
+}
+
+void	ha_median_too(t_stack **stack, int index)
+{
+	t_stack	*tmp;
+
+	tmp = *stack;
+	while (tmp != NULL)
+	{
+		// if (tmp->index <= index)
+		// 	rerotate_ab(&tmp, NULL, 'a');
+		if (tmp->index >= index)
+			rorotate(&tmp, NULL, 'a');
+		tmp = (*stack)->next;
+	}
+	// *stack = tmp;
+}
+
+void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck2)
+{
+	//push to b till a lenght == 3
+	//find median
+	//loop find index if index > med roro 
+	// index < med rero
+	//if index <= chuck push to b
+	// int	med;
+	// (void)b;
+	// (void)chuck;
+	int	len;
+
+	len = 0;
+	printf("len = %d", len);
+	printf("len = %d", chuck);
+	if (stack_lenght(a) == 3)
+		return ;
+	if ((*a)->index <= chuck)
+	{
+		push_stack(a, b, 'b');
+		len++;
+	}
+	else
+		rorotate(a, b, 'a');
+	if (len == chuck)
+	{
+		len = chuck;
+		chuck += chuck2;
+	}
+	sort_yai(a, b, chuck, chuck2);
 }
 
 void	sort_sage(t_stack **a, t_stack **b)
@@ -58,6 +104,7 @@ void	sort_sage(t_stack **a, t_stack **b)
 			chuck = len / 10;
 		else
 			chuck = len / 4;
-		sort_yai(a, b, chuck, chuck, len);
+		sort_yai(a, b, chuck, chuck);
+		// sort_yai_too(a, b, len);
 	}
 }
