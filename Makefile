@@ -4,7 +4,7 @@ SRCS = 	main.c init_stack.c error_406.c sarab.c push_stack.c rotate.c \
 		sort_stack_too.c push_back.c
 
 CC = gcc
-CFLAGS = -Wall -Werror -Wextra
+CFLAGS = -g -Wall -Werror -Wextra
 
 OBJS = $(SRCS:.c=.o)
 
@@ -24,10 +24,10 @@ clean:
 	$(DEL) $(OBJS)
 
 fclean: clean
-	# @say -v Kyoko "ちょっと待って、掃除中"
+	@say -v Kyoko "ちょっと待って、掃除中"
 	$(DEL) $(NAME)
-	# @cat pic/minion.txt
-	# @say -v Kyoko "お待たせしました"
+	@cat pic/minion.txt
+	@say -v Kyoko "お待たせしました"
 
 re: fclean all
 
@@ -36,7 +36,7 @@ norm:
 	@say -v Kanya "ขอตรวจ"
 	@say -v Kyoko "norminetto"
 	@say -v Kanya "หน่อยนะ"
-	@norminette
+	@norminette 
 	@say -v Kanya "ขอบคุณที่รอ"
 
 .PHONY: norm bonus clean fclean all re
