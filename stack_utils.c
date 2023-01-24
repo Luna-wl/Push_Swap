@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   stack_utils.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:10:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/24 21:07:14 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:21:29 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,13 +58,12 @@ int	stack_lenght(t_stack **stack)
 void	my_print(t_stack *node)
 {
 	t_stack	*tmp;
-	int i = 0;
+
 	tmp = node;
 	while (tmp != NULL)
 	{
-		printf(">>>>\t[%d] tmp->index = %d\n", i, tmp->index);
+		printf("tmp->num = |%d|>>>>\ttmp->index = |%d|\n", tmp->num, tmp->index);
 		tmp = tmp->next;
-		i++;
 	}
 	printf("\n");
 }

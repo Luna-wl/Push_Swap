@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:55 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/24 21:22:38 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:07:38 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,10 +33,6 @@ int	main(int ac, char **av)
 		if (truat_stack(&a_stack) == 1)
 			error406(&a_stack, 1);
 		sort_sage(&a_stack, &b_stack);
-		printf("a = \n");
-		my_print(a_stack);
-		printf("b = \n");
-		my_print(b_stack);
 		lop_stack(&a_stack);
 	}
 	return (0);

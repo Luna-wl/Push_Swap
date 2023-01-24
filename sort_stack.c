@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   sort_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/24 21:13:58 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/24 23:19:03 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ void	sort_sage(t_stack **a, t_stack **b)
 	else
 	{
 		if (len >= 500)
-			chuck = len / 10;
+			chuck = len / 14;
 		else
 			chuck = len / 4;
 		sort_yai(a, b, chuck, chuck);
