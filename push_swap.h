@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/18 16:24:57 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/24 21:28:22 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -76,6 +76,8 @@ void	sort_ha(t_stack **a, t_stack **b);
 void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck2);
 //push b to a
 void	back_home(t_stack **a, t_stack **b);
-void	back_home_too(t_stack **a, t_stack **b);
+void	back_home_too(t_stack **a, t_stack **b, int max);
+
+int		ha_position(t_stack **stack, int chuck);
 
 #endif

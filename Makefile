@@ -24,10 +24,10 @@ clean:
 	$(DEL) $(OBJS)
 
 fclean: clean
-	@say -v Kyoko "ちょっと待って、掃除中"
+	#@say -v Kyoko "ちょっと待って、掃除中"
 	$(DEL) $(NAME)
-	@cat pic/minion.txt
-	@say -v Kyoko "お待たせしました"
+	#@cat pic/minion.txt
+	#@say -v Kyoko "お待たせしました"
 
 re: fclean all
 
