@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 16:10:42 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/24 18:35:42 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:24:51 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,23 +26,26 @@ void	rotate(t_stack **stack)
 	last->next = first;
 }
 
-void	rorotate(t_stack **ant, t_stack **bee, char mode)
+void	rorotate(t_stack **ant, t_stack **bee, char mode, int pim)
 {
 	if (mode == 'a')
 	{
 		rotate(ant);
-		write(1, "ra\n", 3);
+		if (pim == 1)
+			write(1, "ra\n", 3);
 	}
 	else if (mode == 'b')
 	{
 		rotate(bee);
-		write(1, "rb\n", 3);
+		if (pim == 1)
+			write(1, "rb\n", 3);
 	}
 	else
 	{
 		rotate(ant);
 		rotate(bee);
-		write(1, "rr\n", 3);
+		if (pim == 1)
+			write(1, "rr\n", 3);
 	}
 }
 
@@ -65,22 +68,25 @@ void	rerotate(t_stack **stack)
 	*stack = tmp;
 }
 
-void	rerotate_ab(t_stack **ant, t_stack **bee, char mode)
+void	rerotate_ab(t_stack **ant, t_stack **bee, char mode, int pim)
 {
 	if (mode == 'a')
 	{
 		rerotate(ant);
-		write(1, "rra\n", 4);
+		if (pim == 1)
+			write(1, "rra\n", 4);
 	}
 	else if (mode == 'b')
 	{
 		rerotate(bee);
-		write(1, "rrb\n", 4);
+		if (pim == 1)
+			write(1, "rrb\n", 4);
 	}
 	else
 	{
 		rerotate(ant);
 		rerotate(bee);
-		write(1, "rrr\n", 4);
+		if (pim == 1)
+			write(1, "rrr\n", 4);
 	}
 }

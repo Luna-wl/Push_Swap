@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 23:59:02 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/05 14:35:14 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:28:33 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,11 @@ char	**ft_split(char const *s, char c)
 	int		i;
 	int		j;
 
-	if (!s)
-		return (NULL);
+	if (*s == 0)
+	{
+		write(2, "Error\n", 6);
+		exit (0);
+	}
 	i = 0;
 	word = check_word(s, c);
 	new = (char **)malloc(sizeof(char *) * (word + 1));

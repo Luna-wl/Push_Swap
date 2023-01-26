@@ -24,22 +24,25 @@ void	sarab_swap(t_stack **stack)
 	(*stack)->next = hua;
 }
 
-void	sarab_stack(t_stack **a, t_stack **b, char mode)
+void	sarab_stack(t_stack **a, t_stack **b, char mode, int pim)
 {
 	if (mode == 'a')
 	{
 		sarab_swap(a);
-		write(1, "sa\n", 3);
+		if (pim == 1)
+			write(1, "sa\n", 3);
 	}
 	else if (mode == 'b')
 	{
 		sarab_swap(b);
-		write(1, "sb\n", 3);
+		if (pim == 1)
+			write(1, "sb\n", 3);
 	}
 	else
 	{
 		sarab_swap(a);
 		sarab_swap(b);
-		write(1, "ss\n", 3);
+		if (pim == 1)
+			write(1, "ss\n", 3);
 	}
 }

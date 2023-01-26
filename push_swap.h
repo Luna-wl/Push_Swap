@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/24 23:06:58 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/26 21:19:28 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <unistd.h>
 # include <stdlib.h>
 # include <stdio.h>
+# include "./checker_bo/get_next_line.h"
 
 typedef struct s_stack {
 	int					num;
@@ -52,16 +53,16 @@ int		truat_stack(t_stack **stack);
 int		dup_mai(t_stack **stack);
 //sarab
 void	sarab_swap(t_stack **stack);
-void	sarab_stack(t_stack **a, t_stack **b, char mode);
+void	sarab_stack(t_stack **a, t_stack **b, char mode, int pim);
 //push
 void	push_stack1to2(t_stack **ichi, t_stack **ni);
-void	push_stack(t_stack **ichi, t_stack **ni, char mode);
+void	push_stack(t_stack **ichi, t_stack **ni, char mode, int pim);
 //rotate
 void	rotate(t_stack **stack);
-void	rorotate(t_stack **ant, t_stack **bee, char mode);
+void	rorotate(t_stack **ant, t_stack **bee, char mode, int pim);
 //rerotate
 void	rerotate(t_stack **stack);
-void	rerotate_ab(t_stack **ant, t_stack **bee, char mode);
+void	rerotate_ab(t_stack **ant, t_stack **bee, char mode, int pim);
 //list2arr && quick sort
 int		*list_to_arr(t_stack **stack, int len);
 void	swap(int *a, int *b);
@@ -77,7 +78,16 @@ void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck2);
 //push b to a
 void	back_home(t_stack **a, t_stack **b);
 void	back_home_too(t_stack **a, t_stack **b);
-
+void	back_home_sam(t_stack **a, t_stack **b, int max);
+//find position
 int		ha_position(t_stack **stack, int chuck);
+t_stack	*ha_po(t_stack **a, int len);
+int		ha_position_a2b(t_stack **stack, int chuck);
+int		ha_tai(t_stack **a, int chuck);
+//bonus part
+void	rab_input(t_stack **a, t_stack **b);
+int		ft_strncmp(char *instr, char *sth, unsigned int n);
+void	truat_instr(t_stack **a, t_stack **b, char *instr);
+void	rab_input_too(t_stack **a, t_stack **b, char *instr);
 
 #endif

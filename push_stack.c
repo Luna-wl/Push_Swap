@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/27 14:45:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/06 16:29:26 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/26 12:06:21 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,20 +24,22 @@ void	push_stack1to2(t_stack **ichi, t_stack **ni)
 	add_hua(ni, hua);
 }
 
-void	push_stack(t_stack **ichi, t_stack **ni, char mode)
+void	push_stack(t_stack **ichi, t_stack **ni, char mode, int pim)
 {
 	if (mode == 'a')
 	{
 		if (*ni == NULL)
 			return ;
 		push_stack1to2(ni, ichi);
-		write(1, "pa\n", 3);
+		if (pim == 1)
+			write(1, "pa\n", 3);
 	}
 	else
 	{
 		if (*ichi == NULL)
 			return ;
 		push_stack1to2(ichi, ni);
-		write(1, "pb\n", 3);
+		if (pim == 1)
+			write(1, "pb\n", 3);
 	}
 }
