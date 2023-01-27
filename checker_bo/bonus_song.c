@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_song.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:37:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/26 17:29:50 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/27 01:40:20 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,19 +28,9 @@ int	ft_strncmp(char *instr, char *sth, unsigned int n)
 	return (0);
 }
 
-void	truat_instr(t_stack **a, t_stack **b, char *instr)
+int	truat_instr_too(t_stack **a, t_stack **b, char *instr)
 {
-	if (!ft_strncmp(instr, "sa\n", 3))
-		sarab_stack(a, b, 'a', 0);
-	else if (!ft_strncmp(instr, "sb\n", 3))
-		sarab_stack(a, b, 'b', 0);
-	else if (!ft_strncmp(instr, "ss\n", 3))
-		sarab_stack(a, b, 's', 0);
-	else if (!ft_strncmp(instr, "pa\n", 3))
-		push_stack(a, b, 'a', 0);
-	else if (!ft_strncmp(instr, "pb\n", 3))
-		push_stack(a, b, 'b', 0);
-	else if (!ft_strncmp(instr, "ra\n", 3))
+	if (!ft_strncmp(instr, "ra\n", 3))
 		rorotate(a, b, 'a', 0);
 	else if (!ft_strncmp(instr, "rb\n", 3))
 		rorotate(a, b, 'b', 0);
@@ -52,6 +42,24 @@ void	truat_instr(t_stack **a, t_stack **b, char *instr)
 		rerotate_ab(a, b, 'b', 0);
 	else if (!ft_strncmp(instr, "rrr\n", 4))
 		rerotate_ab(a, b, 'r', 0);
-	// else
-		// return ;
+	else
+		return (0);
+	return (1);
+}
+
+int	truat_instr(t_stack **a, t_stack **b, char *instr)
+{
+	if (!ft_strncmp(instr, "sa\n", 3))
+		sarab_stack(a, b, 'a', 0);
+	else if (!ft_strncmp(instr, "sb\n", 3))
+		sarab_stack(a, b, 'b', 0);
+	else if (!ft_strncmp(instr, "ss\n", 3))
+		sarab_stack(a, b, 's', 0);
+	else if (!ft_strncmp(instr, "pa\n", 3))
+		push_stack(a, b, 'a', 0);
+	else if (!ft_strncmp(instr, "pb\n", 3))
+		push_stack(a, b, 'b', 0);
+	else
+		truat_instr_too(a, b, instr);
+	return (1);
 }

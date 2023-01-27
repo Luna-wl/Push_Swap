@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
+/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/26 21:19:28 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/27 01:42:09 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -87,7 +87,9 @@ int		ha_tai(t_stack **a, int chuck);
 //bonus part
 void	rab_input(t_stack **a, t_stack **b);
 int		ft_strncmp(char *instr, char *sth, unsigned int n);
-void	truat_instr(t_stack **a, t_stack **b, char *instr);
-void	rab_input_too(t_stack **a, t_stack **b, char *instr);
+int		truat_instr(t_stack **a, t_stack **b, char *instr);
+int		truat_instr_too(t_stack **a, t_stack **b, char *instr);
+// void	rab_input_too(t_stack **a, t_stack **b, char *instr);
+void	error418(t_stack **a, t_stack **b, char *sth);
 
 #endif
