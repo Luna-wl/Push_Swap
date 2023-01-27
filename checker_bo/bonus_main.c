@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_main.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 14:13:04 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/27 01:42:45 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:28:46 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,9 @@ void	error418(t_stack **a, t_stack **b, char *sth)
 {
 	free(sth);
 	lop_stack(a);
-	if (b)
-		lop_stack(b);
+	lop_stack(b);
 	write(2, "ERROR\n", 6);
-	exit(0);
+	exit(255);
 }
 
 void	rab_input(t_stack **a, t_stack **b)
@@ -38,14 +37,8 @@ void	rab_input(t_stack **a, t_stack **b)
 			lop_stack(a);
 			exit(0);
 		}
-		if (truat_instr(a, b, instr) == 0)
-			error418(a, b, instr);
-		else
-		{
-			free(instr);
-			if (truat_stack(a) && *b == NULL)
-				write(1, "OK\n", 3);
-		}
+		truat_instr(a, b, instr);
+		free(instr);
 	}
 }
 

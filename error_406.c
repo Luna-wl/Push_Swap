@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:50:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/08 16:44:48 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:23:44 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,8 @@ void	lop_stack(t_stack **stack)
 	t_stack	*tmp;
 	t_stack	*del;
 
+	if (!stack)
+		return ;
 	del = *stack;
 	while (del != NULL)
 	{

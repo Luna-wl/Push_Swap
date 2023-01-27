@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   bonus_song.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 12:37:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/27 01:40:20 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/27 23:25:44 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	truat_instr_too(t_stack **a, t_stack **b, char *instr)
 	else if (!ft_strncmp(instr, "rrr\n", 4))
 		rerotate_ab(a, b, 'r', 0);
 	else
-		return (0);
+		error418(a, b, instr);
 	return (1);
 }
 
