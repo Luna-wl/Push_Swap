@@ -6,61 +6,11 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 15:29:01 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/27 23:37:47 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/28 00:09:57 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
-
-int	ha_position_a2b(t_stack **stack, int chuck)
-{
-	t_stack	*tmp;
-	int		posi;
-
-	posi = 0;
-	tmp = *stack;
-	while (tmp->next != NULL)
-	{
-		if (tmp->index <= chuck)
-			break ;
-		posi++;
-		tmp = tmp->next;
-	}
-	return (posi);
-}
-
-t_stack	*ha_po(t_stack **a, int len)
-{
-	t_stack	*tmp;
-
-	tmp = *a;
-	while (--len != 0)
-	{
-		if (tmp == NULL)
-			return (NULL);
-		tmp = tmp->next;
-	}
-	return (tmp);
-}
-
-int	ha_tai(t_stack **a, int chuck)
-{
-	t_stack	*po;
-	int		len;
-
-	len = stack_lenght(a);
-	while (len != 0)
-	{
-		po = ha_po(a, len);
-		if (po->index <= chuck)
-		{
-			len = stack_lenght(a) - len;
-			return (len);
-		}
-		--len;
-	}
-	return (0);
-}
 
 void	sort_yai(t_stack **a, t_stack **b, int chuck, int chuck2)
 {

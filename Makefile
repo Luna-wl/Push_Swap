@@ -50,8 +50,10 @@ norm:
 	@say -v Kyoko "norminetto"
 	@say -v Kanya "หน่อยนะ"
 	@echo "---- NORMINETTE ----"
-	@norminette -R CheckForbiddenSourceHeader *.c
 	@norminette -R CheckDefine *.h
+	@norminette -R CheckForbiddenSourceHeader *.c
+	@norminette -R CheckDefine checker_bo/*.h
+	@norminette -R CheckForbiddenSourceHeader checker_bo/*.c
 	@say -v Kanya "ขอบคุณที่รอ"
 	@echo "---- THANK YOU ^w^Y ----"
 

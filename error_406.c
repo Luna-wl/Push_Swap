@@ -6,7 +6,7 @@
 /*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/26 15:50:08 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/27 23:23:44 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/28 01:01:11 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ int	digit_mai(char *s)
 	{
 		if (s[i] >= '0' && s[i] <= '9')
 			i++;
-		else if (s[i] == '-')
+		else if (s[i] == '-' || s[i] == '+')
 			i++;
 		else
 			return (-1);

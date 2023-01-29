@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: wluedara <wluedara@student.42.fr>          +#+  +:+       +#+        */
+/*   By: wluedara <Warintorn_L@outlook.com>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/12/09 16:35:53 by wluedara          #+#    #+#             */
-/*   Updated: 2023/01/27 01:42:09 by wluedara         ###   ########.fr       */
+/*   Updated: 2023/01/28 00:12:38 by wluedara         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,9 +81,6 @@ void	back_home_too(t_stack **a, t_stack **b);
 void	back_home_sam(t_stack **a, t_stack **b, int max);
 //find position
 int		ha_position(t_stack **stack, int chuck);
-t_stack	*ha_po(t_stack **a, int len);
-int		ha_position_a2b(t_stack **stack, int chuck);
-int		ha_tai(t_stack **a, int chuck);
 //bonus part
 void	rab_input(t_stack **a, t_stack **b);
 int		ft_strncmp(char *instr, char *sth, unsigned int n);

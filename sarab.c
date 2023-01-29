@@ -16,7 +16,7 @@ void	sarab_swap(t_stack **stack)
 {
 	t_stack	*hua;
 
-	if ((*stack)->next == NULL)
+	if (*stack == NULL || (*stack)->next == NULL )
 		return ;
 	hua = *stack;
 	*stack = hua->next;
